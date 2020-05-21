@@ -66,7 +66,7 @@ class Articles
         $db = new DataBase();
         $db->query("SELECT SQL_CALC_FOUND_ROWS *, UNIX_TIMESTAMP(publishDate) AS publishDate FROM articles
             ORDER BY " . $order . " LIMIT " . $numRows);
-        //$db->bindValue(":numRows", $numRows, PDO::PARAM_INT);
+
         $rows = $db->resultset();
         $list = array();
         $totalRows = $db->rowCount();
